@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>CRUD APPLICATION</title>
+</head>
+<body>
+    <center>
+        <h1><b> Python CRUD application</b></h1>
+
+        <h2> Python Django Postgresql CRUD</h2>
+        <hr> </hr>
+        <br>
+
+        <a href="{% url 'insertData'%}">Create new client</a>
+
+        <table border="1">
+<tr>
+    <th>client_id</th>
+    <th>client_name</th>
+    <th>client_county</th>
+    <th>client_age</th>
+</tr>
+
+{% for result in data %}
+
+<tr>
+    <td>{{result.client_id}}</td>
+    <td>{{result.client_name}}</td>
+    <td>{{result.client_county}}</td>
+    <td>{{result.client_age}}</td>
+    <td><a href="{%url 'editData' result.client_id%}">Edit</a></td>
+    <td><a href="{%url 'delClt' result.client_id%}">Delete</a></td>
+</tr>
+
+{% endfor %}
+
+        </table>
+
+    </center>
+</body>
+</html>

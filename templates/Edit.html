@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title>CRUD APPLICATION</title>
+</head>
+<body>
+    <center>
+        <h1><b> Python Edit CRUD application</b></h1>
+
+        <h2> Python Django Postgresql CRUD</h2>
+        <hr> </hr>
+        <br>
+
+        <form method="post" action="/Update/{{main_clientsModel.client_id}}">
+           {% csrf_token %}
+
+        <table border="1">
+
+
+            <tr>
+                <td>Client id</td>
+                <td><input type="text" name="client_id" value="{{main_clientsModel.client_id}}" readonly></td>
+            </tr>
+
+
+
+            <tr>
+                <td>Client name</td>
+                <td><input type="text" name="client_name" value="{{main_clientsModel.client_name}}"></td>
+            </tr>
+
+            <tr>
+                <td>Client county</td>
+                <td><input type="text" name="client_county" value="{{main_clientsModel.client_county}}"></td>
+            </tr>
+
+            <tr>
+                <td>Client Age</td>
+                <td><input type="text" name="client_age" value="{{main_clientsModel.client_age}}"></td>
+            </tr>
+            
+            
+            <tr>
+            
+                <td><input type="submit"  value="Update record"></td>
+                <td> {%if messages%}
+        {% for x in messages %}
+
+        <b>{{x}}</b>
+
+        {% endfor %}
+        {% endif %}</td>
+
+        <td> <a href="{% url 'showClients' %}">Home</a></td>
+
+            </tr
+  </table>
+        </form>
+       
+
+    </center>
+</body>
+</html>

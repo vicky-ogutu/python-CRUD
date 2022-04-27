@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>CRUD APPLICATION</title>
+</head>
+<body>
+    <center>
+        <h1><b> Insert data to postgresql</b></h1>
+        <h2> Python Django Postgresql CRUD</h2>
+        <hr> </hr>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+        <table border="1">
+
+<tr>
+    <td>Client ID</td>
+    <td><input type="text" name="client_id"></td>
+</tr>
+
+
+<tr>
+    <td>Client name</td>
+    <td><input type="text" name="client_name"></td>
+</tr>
+
+<tr>
+    <td>County</td>
+    <td><input type="text" name="client_county"></td>
+</tr>
+    
+    
+<tr>
+    <td>Client age</td>
+    <td><input type="text" name="client_age"></td>
+</tr>
+
+<tr>
+    <td>Submit</td>
+    <td><input type="Submit" value="Submit"></td>
+    
+    <td> {% if messages%}
+        {% for x in messages %}
+
+        <b>{{x}}</b>
+
+        {% endfor %}
+        {% endif %}</td>
+
+</tr>
+
+        </table>
+        </form>
+
+        <a href="{% url 'showClients'%}">Home</a>
+    
+
+    </center>
+</body>
+</html>
